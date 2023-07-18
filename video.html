@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO</title>
+</head>
+<body>
+    <video>
+        <source src="myvedioplay.mp4"/>
+    </video>
+    <output id="timeout">0</output>
+    <button id="btnplay">PLAY</button>
+    <button id="btnpause">PAUSE</button>
+    <button id="btnstop">STOP</button>
+    <script>
+        let myvideo= document.getElementsByTagName("video");
+        myvideo=myvideo[0];
+        const btnplay=document.getElementById("btnplay");
+        const btnpause=document.getElementById("btnpause");
+        const btnstop= document.getElementById("btnstop");
+
+       // play video
+        btnplay.addEventListener("click",()=>{
+            myvideo.play(); });
+            //  pause video
+            btnpause.addEventListener("click",()=>{
+                myvideo.pause();
+            });
+            btnstop.addEventListener("click",()=>{
+                myvideo.pause();
+                myvideo.currenTime=0;
+            });
+            // show time in video
+            let myin=setInterval(postime,1000);
+            function postime(){
+        let t=Math.round(myvideo.currenTime);
+                document.getElementById("timeout").innerHTML= "Time  "+t;
+            }
+
+
+    </script>
+
+    
+</body>
+</html>

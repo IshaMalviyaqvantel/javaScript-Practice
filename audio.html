@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUDIO</title>
+</head>
+<body>
+  <button id="btnplay"> PLAY</button>  
+  <button id="btnstop">STOP</button>
+  <button id="btnpause">PAUSE</button>
+  <button id="volumeup">VOLUME UP</button>
+  <button id="volumedown">VOLUME DOWN</button>
+  <button id ="changesong">CHANGE</button>
+  <script>
+    const btnplay=document.getElementById("btnplay");
+    const btnstop=document.getElementById("btnstop");
+    const btnpause=document.getElementById("btnpause");
+    const volumeup=document.getElementById("volumeup");
+    const volumedown=document.getElementById("volumedown");
+    const changesong=document.getElementById("changesong");
+    const audioplayer=new Audio("music.mp3");
+//play audio
+    btnplay.addEventListener("click",()=>{
+            audioplayer.play();
+     });
+     // play stop
+     btnstop.addEventListener("click",()=>{
+        audioplayer.pause();
+        audioplayer.currentTime=0;
+     });
+     //play pause
+     btnpause.addEventListener("click",()=>{
+        audioplayer.pause();
+     });
+      // volume up
+      volumeup.addEventListener("click",()=>{
+        audioplayer.volume+=.1;
+      });
+// volume down
+volumedown.addEventListener("click",()=>{
+        audioplayer.volume-=.1;
+      });
+      // change audio
+      changesong.addEventListener("click",()=>{
+        audioplayer.src="music2.mp3";
+      });
+
+  </script>
+</body>
+</html>

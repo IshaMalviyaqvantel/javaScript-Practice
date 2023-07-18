@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event reaction</title>
+</head>
+<body>
+    <div id = "main">
+        <p id ="title" > this is Title text.</p>
+        <button id="btnlarger">LARGER</button>
+        <button id="btnsmaller">SMALLER</button>
+ </div>
+ <script>
+    const btnlarger=document.getElementById("btnlarger");
+    const btnsmaller=document.getElementById("btnsmaller");
+    let size=0;
+    btnlarger.addEventListener("click",(e)=>{
+        console.log(e);
+        size+=2.5;
+        document.getElementById("title").style.fontSize=size+"em";
+        if(e.shiftKey==true){
+            alert("thank for update");
+        }
+    });
+    btnsmaller.addEventListener("click",()=>{
+        size-=2.5;
+        document.getElementById("title").style.fontSize=size+"em";
+    });
+    document.addEventListener("keypress ",(e)=>{
+        var name=e.key;
+        var code=e.code;
+        document.getElementById("title").innerHTML="key " +name+" code"+code;
+    });
+ </script>
+</body>
+</html>
