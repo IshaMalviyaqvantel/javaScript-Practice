@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <h1> JSON PRACTICE</h1>
+    <script>
+        
+            fetch('mysub.json')
+.then(response => response.json())
+.then(data => {
+ for(line in data.lines) {
+ let subwayLine = data.lines[line];
+ console.log("Line :  "+ subwayLine.name);
+ console.log("Color : " + subwayLine.color);
+ console.log("Stations : "+ subwayLine.stations);
+ }
+})
+.catch(err => {
+ console.log(err);
+});
+    </script>
+</body>
+</html>

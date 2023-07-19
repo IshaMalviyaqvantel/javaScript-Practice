@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMISE</title>
+</head>
+<body>
+    <script>
+        // promise resolve
+    var promise=new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve(" hello world");
+        },2000);
+    });
+    promise.then(function(data){
+        console.log(data);
+    });
+    promise.then(function(data){
+        console.log(data+" 1");
+    });
+    promise.then(function(data){
+        console.log(data+" 2");
+    });
+    promise.then(function(data){
+        console.log(data+" 3");
+    });
+// promise reject
+    var promise=new Promise(function(resolve,reject){
+        setTimeout(function(){
+            reject("this is a error.");
+        },2000);
+    });
+    promise.then(function success (data){
+        console.log(data);},
+    function error(data){
+        console.error(data);});
+       
+        promise.then(function success(data){
+            console.log(data+" 1");
+        },
+        function error (data){
+        console.error(data+" 1");
+        });
+
+        promise.then( function success(data){
+            console.log(data+" 2");
+        },
+        function error(data){
+            console.error(data+" 2");
+        }
+        );
+    
+
+    </script>
+</body>
+</html>

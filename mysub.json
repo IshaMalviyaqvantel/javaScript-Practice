@@ -1,0 +1,15 @@
+{
+    "lines":{
+" 1":{
+    "name" : "1",
+    "color": "red",
+    " stations":[ "van constant","285th","Marble hill-225 stations"]
+},
+" 2":{
+    "name" : "2",
+    "color": "red",
+    " stations":[ "wakefield St","219th","gun hill rd"]
+}
+
+
+}}

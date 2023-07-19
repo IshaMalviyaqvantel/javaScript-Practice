@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML</title>
+</head>
+<body>
+    <script>
+        fetch('data.xml')
+        .then(response=>response.text())
+        .then(data=>{
+            parser =new DOMParser();
+            let xmldoc=parser.parseFromString(data,"text/xml");
+            let b=xmldoc.getElementsByTagName("book");
+            for(let i=0;i<b.length;i++){
+                let title=b[i].getElementsByTagName("title")[0].textContent;
+                let author=b[i].getElementsByTagName("author")[0].textContent;
+                let year=b[i].getElementsByTagName("year")[0].textContent;
+                let price=b[i].getElementsByTagName("price")[0].textContent;
+
+                console.log("title :"+title);
+                console.log("Author : "+author);
+                console.log("year :"+year);
+                console/log("price : "+price);
+            }
+        });
+        
+    </script>
+</body>
+</html>
