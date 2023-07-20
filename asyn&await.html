@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASYNC & AWAIT</title>
+</head>
+<body>
+    <label for ="  zip">ZIP code</label>
+    <input text="number" id="zip"/>
+    <button id="btn"> get info</button>
+    <div id =" info">
+    </div>
+    <script>
+        const btn=document.getElementById("btn");
+         btn.onclick= ()=> getresponse();
+         async function  getresponse(){
+            const zip=document.getElementById("zip").value;
+            const zipurl="http://api.zippopotam.us";
+            const response= await fetch(zipurl);
+            const data= await response.json();
+            display(data);
+         }
+         display=(data)=>{
+            const city=data.places[0].city;
+            const state=data.places[0].state;
+            document.getElementById("info").innerHTML="<h1>$<city>,$<state></h1>";
+         }
+    </script>
+</body>
+</html>
