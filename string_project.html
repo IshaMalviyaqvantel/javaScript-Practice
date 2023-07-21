@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<style>
+    textarea{
+        width: 100%;
+        font-size: 1.15cm;
+        display: block;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<body>
+    <h1> Enter your String</h2>
+    <textarea id="userstr"> </textarea>
+    <button id ="btn">process string </button>
+    <div id="output"> </div>
+    <script>
+        const btn= document.getElementById('btn'); 
+        btn.onclick= (e)=>{
+            let out="";
+            
+            // length of string
+            let userstr=document.getElementById("userstr").value;
+            let size=userstr.length;
+            out+="<h2> string information </h2>";
+            out+="char :"+ size+"<br>";
+          // char unicode
+
+            out+="<h2> character position </h2>";
+            let x=0;
+            while(x<size){
+                out+=  x + " : "+userstr.charAt(x)+"unicode"+userstr.charCodeAt(x)+"<br/>";
+                x++;
+            }
+            // index of char
+            out+="<h2> the first position of l : "+ userstr.indexOf('l');
+            out+="<br/> the last position of l : " + userstr.lastIndexOf('l')+"</h2>";
+
+            // end with
+
+            if(userstr.endsWith("."))
+            {
+                out+= "<br/> <p> end with . </p>";
+        } else{
+            out+= "<br/> <p> end not with . </p>";
+
+        }
+// replacement char
+out+="<p> replacement char : <br/>"+userstr.replace(/[A-Z]/g,"x");
+out+="</p>";
+// split in array
+let str=" marry brett joan  Rick";
+let strArray= str.split(' ');
+console.log(strArray);
+
+for(let i=0;i<str.length;i++){
+    out+=strArray[i];
+    out+" ";
+}
+
+
+            
+            document.getElementById("output").innerHTML=out;
+        }
+
+
+    </script>
+    
+</body>
+</html>

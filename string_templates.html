@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING TEMPLATES</title>
+</head>
+<body>
+    <output id ="out">
+
+    </output>
+    <script>
+        // quates
+        const output=document.getElementById("out");
+        let george='"<p>George is a crazy monkey," said the main in the yellow that.</p>'
+        output.innerHTML=george;
+        output.innerHTML+="<br/><br/>";
+
+        // multiple string
+        let poem= '<p> with Rue my heart is laden<br/> for golden friends I had<br/> for many a rose-lipped<br/> maiden <br/>and many alightload lad </p>'
+        output.innerHTML+=poem;
+        output.innerHTML+="<br/><br/>";
+
+        // string interpolation
+        let firstname=" Isha";
+        let lastname=" Malviya";
+        const fullname=  `${firstname} ${lastname}`;
+        output.innerHTML+=fullname;
+        output.innerHTML+="<br/><br/>";
+ 
+        output.innerHTML+= `67*3+12/4.33 =  ${67*3+12/4.33}`;
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAW BAR USING CLASS & OBJECT</title>
+</head>
+<script src="class.js"></script>
+<style>
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div{
+        border-bottom: 20px solid ;
+        border-right: 20px solid;
+        border-top: 20px solid;
+        background-color: blue;
+        margin-bottom: 5px;
+
+    }
+
+</style>
+<body>
+    <output id ="out"></output>
+    <script>
+        let out=document.getElementById("out");
+        let bar1= new Bar(50,350,"red");
+        let bar2 = new Bar(50,200,'yellow');
+
+        let Bars=[bar1, bar2];
+        for(x in Bars){
+            out.innerHTML+=Bars[x].DrawBar();
+        }
+    </script>
+</body>
+</html>

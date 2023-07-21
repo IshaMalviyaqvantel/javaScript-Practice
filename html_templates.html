@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML TEMPLATES</title>
+</head>
+<body>
+   <output id ="out"></output> 
+   <script>
+   const output=document.getElementById("out");
+   const header=" US Airlines";
+   const airline=["american","retttage","united","southwest","jetblue"];
+   let html= `<h2> ${header} </h2>`;
+   html+=`<ul`;
+   for(let i of airline){
+    html+=`<li>${i}</li>`;
+   }
+   html+=`</ul>`;
+   output.innerHTML+=html;
+   </script>
+</body>
+</html>
